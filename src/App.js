@@ -12,7 +12,7 @@ function App() {
   }, []); // The empty array ensures that this effect runs only once, like componentDidMount
 
   const fetchCSVData = () => {
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSU8YUot8AgSltOgR2F_Wm52tZxquFgZJTgBuk5UJSjpjFBgM5vkQ-q2JRJKNvDSTnadgf3KOLqh9ry/pub?gid=221203906&single=true&output=csv'; // Replace with your Google Sheets CSV file URL
+    const csvUrl = process.env.REACT_APP_SHEET_URL; // Replace with your Google Sheets CSV file URL
 
     axios.get(csvUrl)    // Use Axios to fetch the CSV data
         .then((response) => {
